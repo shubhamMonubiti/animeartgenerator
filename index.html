@@ -1,0 +1,39 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+<script>
+
+for(i = 1; i<=50 ; i++){
+const api = "https://api.nekosapi.com/v3/images/random";
+const getHolidays =  async() => {
+let promise = await fetch(api);
+console.log(promise);
+let data = await promise.json();
+console.log(data.items[i].image_url );
+
+var img = document.createElement("img");
+document.body.appendChild(img);
+img.style.width="300px";
+img.style.height="200px";
+img.src = data.items[i].image_url;
+
+
+}
+getHolidays();
+}
+
+
+
+
+
+
+</script>
+
+</body>
+
+</html>
